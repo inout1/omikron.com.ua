@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% from "macros/partners.html" import render_partner_card %}
+{% block title %}{{ this.title }}{% endblock %}
+{#% block title %}Our Partners{% endblock title %#}
+{% block body %}
+  <div style="float: none; clear: both;"></div>
+  {% for partner in this.attachments %}
+    {% if not partner.hide %}
+      {{ render_partner_card(partner) }}
+    {% endif %}
+  {% endfor %}
+  <div style="float: none; clear: both;"></div>
+{% endblock %}

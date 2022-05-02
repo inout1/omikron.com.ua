@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% if this._path == '/' %}
+  {% set this = site.get('/about') %}
+{% endif %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  <h1>{{ this.title }}</h1>
+  {{ this.body }}
+{% endblock %}

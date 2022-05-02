@@ -1,0 +1,22 @@
+<div class="menu">
+  {% for href, title in bag('main-nav').items() %}
+    {% set canonical_href = '/about' if href == '/' else href %}
+    <a href="{{ href | url }}"{% if this.is_child_of(canonical_href) %}
+       class="active"{% endif %}><nobr>{{ title.lower() }}</nobr></a>
+  {% endfor %}
+</div>
+
+<!--nav>
+  <ul class="nav navbar-nav">
+    <li{% if this._path == '/' %} class="active"{% endif
+      %}><a href="{{ '/'|url }}">Welcome</a></li>
+    {% for href, title in [
+      ['/blog', 'Blog'],
+      ['/projects', 'Projects'],
+      ['/about', 'About']
+    ] %}
+      <li{% if this.is_child_of(href) %} class="active"{% endif
+        %}><a href="{{ href|url }}">{{ title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav-->

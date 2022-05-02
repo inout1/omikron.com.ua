@@ -1,0 +1,24 @@
+{% macro render_portfolio_item_card(portfolio_item) %}
+  {% set external_width = 232 %}
+  {% set external_height = 345 %}
+  {% set internal_width = external_width - 20 %}
+  {% set internal_height = external_height - 43 %}
+  {#% set logo_img = portfolio_item.attachments.first() %#}
+  {% set logo_img = portfolio_item %}
+  <div style="width: {{ external_width }}px; height: {{ external_height }}px; text-align: center; float: left; margin: 10px; background: #242424;">
+    <div style="height: {{ external_height }}px; width: {{ external_width }}px;">
+      <div style="display: block; text-transform: uppercase; height: {{ internal_height }}px; width: {{ external_width }}px; padding-top: 10px;">
+        <span style="display: block; height: {{ internal_height }}px; margin: 0 10px 5px; background: black;">
+          <span style="display: table-cell; width: {{ internal_width }}px; height: {{ internal_height }}px; vertical-align: middle;">
+            <a>
+              <span style="display: table-cell; width: {{ internal_width }}px; height: {{ internal_height }}px; vertical-align: middle;">
+                <img src="{{ logo_img.path }}" title="{{ portfolio_item.name or '' }}" alt="{{ portfolio_item.name or '' }}" style="max-width: {{ internal_width }}px; max-height: {{ internal_height }}px;" />
+              </span>
+            </a>
+          </span>
+        </span>
+        <h3 style="font-size: 10px; line-height: 23px; text-align: justify; padding-left: 10px; color: white; font-weight: normal;">{{ portfolio_item.name }}</h3>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

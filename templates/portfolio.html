@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% from "macros/portfolio.html" import render_portfolio_item_card %}
+{% block title %}{{ this.title }}{% endblock %}
+{#% block title %}{#Портфоліо# }Our Works{% endblock title %#}
+{% block body %}
+  <div style="margin: 0 66px;">
+    <div style="float: none; clear: both;"></div>
+    {% for portfolio_item in this.attachments %}
+      {% if not portfolio_item.hide %}
+        {{ render_portfolio_item_card(portfolio_item) }}
+      {% endif %}
+    {% endfor %}
+    <div style="float: none; clear: both;"></div>
+  </div>
+{% endblock %}

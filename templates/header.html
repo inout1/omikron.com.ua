@@ -1,0 +1,25 @@
+<!--header-->
+  <!--h1>omikron.com.ua</h1-->
+<div class="header">
+  <div class="hbg"></div>
+  <div class="hlogo"><a href="{{ '/' | url }}" style="display: inline-block; height: 100%; width: 100%;"></a></div>
+  <div class="conta">
+    {% for phone_repr, phone_num in bag('phones').items() %}
+      <p><a style="text-decoration: none; color: #45484F;" href="tel:{{ phone_num }}">{{ phone_repr }} <i class="icon-white icon-phone"></i></a></p>
+    {% endfor %}
+    {% for subject, email in bag('emails').items() %}
+      <p><a style="text-decoration: none; color: #45484F;" href="mailto:{{ email }}?subject={{ subject }}">{{ email }} <i class="icon-white icon-envelope"></i></a></p>
+    {% endfor %}
+    {% for skype_name in bag('skypes').values() %}
+      <p><a style="text-decoration: none; color: #45484F;" href="{{ skype_name }}">{{ skype_name }} <i class="icon-white icon-skype"></i></a></p>
+    {% endfor %}
+  </div>
+  <div class="socia">
+    {% for social_icon, social_url in bag('socials').items() %}
+      <p><a style="text-decoration: none; color: #45484F;" href="{{ social_url }}"><i class="icon-white icon-{{ social_icon }}"></i></a></p>
+    {% endfor %}
+  </div>
+</div>
+
+{% include 'menu.html' %}
+<!--/header-->
