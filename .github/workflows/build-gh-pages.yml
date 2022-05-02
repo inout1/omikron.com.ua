@@ -24,6 +24,7 @@ jobs:
         python -m
         pip install
         -U --user
+        'Click < 8.1.3'
         Lektor
     - name: Check out src from Git
       uses: actions/checkout@v2
