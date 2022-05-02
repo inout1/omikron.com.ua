@@ -1,2 +1,6 @@
 [project]
 name = omikron.com.ua
+locale = en_US
+
+# NOTE: This is necessary for `sitemap.xml` and `sitemap.html` to work:
+url = https://omikron.com.ua
