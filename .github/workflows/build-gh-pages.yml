@@ -9,6 +9,10 @@ jobs:
     name: 👷
     runs-on: ubuntu-latest
 
+    environment:
+      name: gh-pages
+      url: https://omikron.com.ua
+
     steps:
     - name: Switch to Python 3.10
       uses: actions/setup-python@v2
